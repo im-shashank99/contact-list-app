@@ -28,7 +28,7 @@ public class ContactList {
         System.out.println("\nIs it a student or faculty?");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Type (student or faculty): ");
-        String option = scanner.next();
+        String option = scanner.nextLine();
         if (option.equals("student")) return 1;
         else if (option.equals("faculty")) return 0;
         else {
@@ -45,10 +45,10 @@ public class ContactList {
         details[0] = scanner.nextLine();
 
         System.out.print("Phone number: ");
-        details[1] = scanner.next();
+        details[1] = scanner.nextLine();
 
         System.out.print("Email: ");
-        details[2] = scanner.next();
+        details[2] = scanner.nextLine();
 
         return details;
 
@@ -59,7 +59,7 @@ public class ContactList {
         String[] details = baseContactDetails();
 
         System.out.print("Date of birth: ");
-        String dateOfBirth = scanner.next();
+        String dateOfBirth = scanner.nextLine();
 
         return new Student(details[0], details[1], details[2], dateOfBirth);
     }
@@ -69,7 +69,7 @@ public class ContactList {
         String[] details = baseContactDetails();
 
         System.out.print("Subject: ");
-        String subject = scanner.next();
+        String subject = scanner.nextLine();
 
         return new Faculty(details[0], details[1], details[2], subject);
     }
@@ -131,26 +131,26 @@ public class ContactList {
 
             System.out.print("Enter the option number: ");
             Scanner scanner = new Scanner(System.in);
-            int option = scanner.nextInt();
+            String option = scanner.nextLine();
 
             switch (option) {
-                case 1:
+                case "1":
                     System.out.print("Enter new name: ");
-                    currentContact.name = scanner.next();
+                    currentContact.name = scanner.nextLine();
                     break;
-                case 2:
+                case "2":
                     System.out.println("Enter new phone: ");
                     currentContact.phone = scanner.next();
                     break;
-                case 3:
+                case "3":
                     System.out.print("Enter new email: ");
                     currentContact.email = scanner.next();
                     break;
-                case 4:
+                case "4":
                     System.out.print("Enter new date of birth: ");
                     ((Student) currentContact).dateOfBirth = scanner.next();
                     break;
-                case 5:
+                case "5":
                     System.out.print("Enter new subject: ");
                     ((Faculty) currentContact).subject = scanner.next();
                     break;
